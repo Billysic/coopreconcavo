@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CoopRecôncavo | Agricultura Familiar B2B</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- PLUGIN ADOPT (Adequação LGPD) -->
+  <script 
+    type="text/javascript" 
+    src="https://cdn.mktg.adopt.id/adopt.js" 
+    data-adopt="SEU_ID_DO_ORGANISMO_AQUI">
+  </script>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">CoopRecôncavo</div>
+    <nav>
+      <a href="#impacto">Nossa Terra</a>
+      <a href="#catalogo">Produtos</a>
+      <a href="#cotacao" class="btn btn-primary">Solicitar Orçamento</a>
+    </nav>
+  </header>
+
+  <!-- SEÇÃO HERO -->
+  <section class="hero-section">
+    <h1 class="hero-title">
+      Alimentos Orgânicos Direto da Agricultura Familiar
+    </h1>
+
+    <p class="hero-subtitle">
+      Fornecemos hortaliças e produtos frescos com certificação orgânica e
+      rastreabilidade total para supermercados, restaurantes e redes de food service.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#cotacao" class="btn btn-primary">Seja um Parceiro Comercial</a>
+      <a href="#catalogo" class="btn btn-secondary">Explorar Safra</a>
+    </div>
+  </section>
+
+  <main class="container">
+
+    <section id="impacto" class="impact-section">
+      <div class="impact-stats">
+        <div class="stat-card">
+          <h3>50</h3>
+          <p>Famílias Beneficiadas</p>
+        </div>
+        <div class="stat-card">
+          <h3>100%</h3>
+          <p>Orgânico Certificado</p>
+        </div>
+        <div class="stat-card">
+          <h3>+10 Anos</h3>
+          <p>Manejo Agroecológico</p>
+        </div>
+      </div>
+      <div class="impact-text">
+        <h2>Cultivando Sustentabilidade no Recôncavo Baiano</h2>
+        <p>A Cooperativa Agrícola do Recôncavo une a tradição do trabalho no campo à entrega profissional exigida pelo
+          mercado. Sob a liderança de Dona Jussara e de dezenas de famílias produtoras, garantimos produtos colhidos no
+          tempo certo com entrega estruturada.</p>
+      </div>
+    </section>
+
+    <section id="catalogo">
+      <h2>Nosso Catálogo de Culturas</h2>
+      <p style="margin-bottom: 1.5rem; color: #555;">Confira a disponibilidade e os ciclos de colheita das nossas
+        famílias produtoras.</p>
+
+      <div class="filter-bar">
+        <button class="filter-btn active" onclick="filterProducts('all')">Todos</button>
+        <button class="filter-btn" onclick="filterProducts('Folhosas')">Folhosas</button>
+        <button class="filter-btn" onclick="filterProducts('Raízes')">Raízes</button>
+        <button class="filter-btn" onclick="filterProducts('Frutos')">Frutos</button>
+      </div>
+
+      <div class="product-grid" id="productGrid"></div>
+    </section>
+
+    <section id="cotacao" class="form-section">
+      <h2>Seja um Parceiro Comercial</h2>
+      <p style="margin-bottom: 1.5rem; color: #555;">Preencha o formulário abaixo para receber nosso portfólio completo
+        de preços e logística.</p>
+
+      <form id="b2bForm" onsubmit="submitForm(event)">
+        <div class="website-field">
+          <label for="website">Não preencha este campo:</label>
+          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="buyerName">Nome do Comprador *</label>
+            <input type="text" id="buyerName" name="buyerName" required placeholder="Ex: João Silva">
+          </div>
+          <div class="form-group">
+            <label for="companyName">Nome da Empresa / CNPJ *</label>
+            <input type="text" id="companyName" name="companyName" required placeholder="Ex: Supermercado Recôncavo">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">E-mail Corporativo *</label>
+            <input type="email" id="email" name="email" required placeholder="compras@empresa.com.br">
+          </div>
+          <div class="form-group">
+            <label for="phone">Telefone / WhatsApp *</label>
+            <input type="tel" id="phone" name="phone" required placeholder="(75) 99999-9999">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="volume">Volume Estimado Semanal *</label>
+          <select id="volume" name="volume" required>
+            <option value="">Selecione uma faixa de volume...</option>
+            <option value="Abaixo de 100kg">Até 100 kg/semana</option>
+            <option value="100kg - 500kg">100 kg a 500 kg/semana</option>
+            <option value="Acima de 500kg">Acima de 500 kg/semana</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Mensagem / Necessidades Específicas</label>
+          <textarea id="message" name="message" rows="4"
+            placeholder="Descreva os produtos de maior interesse e frequência desejada..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar Solicitação de Orçamento</button>
+      </form>
+      <div id="formFeedback" class="feedback-msg"></div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Cooperativa Agrícola do Recôncavo (CoopRecôncavo) - Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Seu JavaScript principal -->
+  <script src="js/main.js"></script>
+
+  <!-- VLIBRAS -->
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+
+</body>
+
+</html>
