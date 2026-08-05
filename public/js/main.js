@@ -1,3 +1,6 @@
+// COLE A SUA URL DO GOOGLE APPS SCRIPT ENTRE AS ASPAS ABAIXO:
+const GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/AKfycbzHnXfFNx28aZvhmx5gfChlU4e02pBZlbKogHppgn_I3P5ddJraoRwiV1PjR94FaAngeQ/exec   ";
+
 async function loadProducts(category = 'all') {
   const grid = document.getElementById('productGrid');
   grid.innerHTML = '<p style="grid-column: 1/-1; text-align: center;">Carregando produtos...</p>';
@@ -36,7 +39,9 @@ async function loadProducts(category = 'all') {
 
 function filterProducts(category) {
   document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-  event.target.classList.add('active');
+  if (window.event && window.event.target) {
+    window.event.target.classList.add('active');
+  }
   loadProducts(category);
 }
 
@@ -57,24 +62,26 @@ async function submitForm(event) {
   };
 
   try {
-    const res = await fetch('/api/contact', {
+    const res = await fetch(GOOGLE_SHEETS_URL, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
       body: JSON.stringify(formData)
     });
 
     const data = await res.json();
-    if (res.ok) {
+
+    if (data.status === 'success') {
       feedback.style.color = "green";
-      feedback.textContent = data.message;
+      feedback.textContent = "Solicitação enviada com sucesso! Entraremos em contato em breve.";
       document.getElementById('b2bForm').reset();
     } else {
       feedback.style.color = "red";
       feedback.textContent = data.error || "Erro ao processar solicitação.";
     }
   } catch (err) {
+    console.error("Erro no envio:", err);
     feedback.style.color = "red";
-    feedback.textContent = "Erro de conexão com o servidor.";
+    feedback.textContent = "Erro de conexão ao enviar para a planilha.";
   }
 }
 
