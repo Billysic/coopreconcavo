@@ -87,4 +87,23 @@ async function submitForm(event) {
 
 document.addEventListener('DOMContentLoaded', () => {
   loadProducts();
+
+  const toggleButton = document.querySelector('.menu-toggle');
+  const nav = document.getElementById('site-nav');
+
+  if (toggleButton && nav) {
+    toggleButton.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('is-open');
+      toggleButton.setAttribute('aria-expanded', String(isOpen));
+      toggleButton.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
+    });
+
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('is-open');
+        toggleButton.setAttribute('aria-expanded', 'false');
+        toggleButton.setAttribute('aria-label', 'Abrir menu');
+      });
+    });
+  }
 });

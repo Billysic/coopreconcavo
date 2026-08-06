@@ -8,7 +8,7 @@
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   <link rel="shortcut icon" href="images/favicon.svg" type="image/svg+xml">
 
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
 
   <!-- Google Tag Manager -->
   <script>(function (w, d, s, l, i) {
@@ -46,7 +46,12 @@
 
   <header>
     <div class="logo">CoopRecôncavo</div>
-    <nav>
+    <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="site-nav">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav id="site-nav">
       <a href="#impacto">Nossa Terra</a>
       <a href="#catalogo">Produtos</a>
       <a href="#localizacao">Localização</a>
@@ -190,7 +195,7 @@
   </footer>
 
   <!-- Seu JavaScript principal -->
-  <script src="js/main.js"></script>
+  <script src="/js/main.js"></script>
 
   <!-- VLIBRAS -->
   <div vw class="enabled">
