@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="CoopRecôncavo favicon">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4CAF50" />
+      <stop offset="100%" stop-color="#1B5E20" />
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="24" fill="#fff" />
+  <path d="M30 80 C30 50, 80 45, 80 25 C80 45, 110 45, 90 80 C90 100, 60 110, 30 80 Z" fill="url(#grad)" stroke="#2E7D32" stroke-width="6" />
+  <circle cx="64" cy="42" r="8" fill="#FFEB3B" />
+  <path d="M36 70 L55 45 L74 70" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
